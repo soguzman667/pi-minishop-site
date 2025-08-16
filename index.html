@@ -11,12 +11,28 @@
         <h1>Bienvenue sur MiniShop Pi</h1>
     </header>
 
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#products">Produits</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section id="products">
             <h2>Nos produits</h2>
-            <div class="product-list">
-                <!-- Les produits seront ajoutés ici par script.js -->
-            </div>
+            <div class="product-list"></div>
+        </section>
+
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre email" required>
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
         </section>
     </main>
 
