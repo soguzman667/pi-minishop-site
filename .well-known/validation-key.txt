@@ -1,2 +1,1 @@
-Ajout de validation-key.txt pour le domaine Pi network
-0495d44deff300b046b47c64cce46d3c894d02c579693ff4c1e31a6a7a28a93737459f4ec8ac5566499ee371bcfa20b6c878677ea0fe0166d9fd6384a49be983
+0495d44deff300b046b47c64cce46d3c89
