@@ -83,3 +83,14 @@ checkoutBtn.addEventListener("click", () => {
   renderCart();
   cartModal.style.display = "none";
 });
+function updateCart() {
+  cartCountElement.textContent = cart.length;
+  
+  // Ajouter la classe bounce pour l'animation
+  cartCountElement.classList.add("bounce");
+
+  // Retirer la classe après l'animation pour pouvoir la rejouer
+  setTimeout(() => {
+    cartCountElement.classList.remove("bounce");
+  }, 500);
+}
