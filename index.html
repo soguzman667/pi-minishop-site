@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MiniShop Pi — Accueil</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/img/favicon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniShop Pi</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body data-page="home">
-  <header class="site-header">
-    <a class="brand" href="index.html">🛍️ MiniShop Pi</a>
-    <nav class="nav">
-      <a href="index.html">Accueil</a>
-      <a href="cart.html" class="cart-link">Panier <span id="cart-count" class="badge">0</span></a>
+<body>
+  <header>
+    <div class="logo">MiniShop Pi</div>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Produits</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
+    <div class="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>Nos produits</h1>
-    <div id="product-grid" class="grid"></div>
+  <section class="hero">
+    <h1>Bienvenue sur MiniShop Pi</h1>
+    <p>Achetez facilement avec vos Pi Coins</p>
+    <a href="#produits" class="btn">Découvrir les produits</a>
+  </section>
+
+  <main id="produits" class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Produit 1">
+      <h3>Produit 1</h3>
+      <p>Prix : 5 Pi</p>
+      <button class="add-to-cart">Ajouter au panier</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Produit 2">
+      <h3>Produit 2</h3>
+      <p>Prix : 10 Pi</p>
+      <button class="add-to-cart">Ajouter au panier</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200" alt="Produit 3">
+      <h3>Produit 3</h3>
+      <p>Prix : 15 Pi</p>
+      <button class="add-to-cart">Ajouter au panier</button>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> MiniShop Pi — Tous droits réservés.</small>
+  <footer>
+    <p>© 2025 MiniShop Pi. Tous droits réservés.</p>
   </footer>
 
-  <script src="js/app.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
