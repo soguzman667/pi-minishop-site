@@ -383,3 +383,18 @@ footer {
   box-shadow: 0 0 15px #a450f0, 0 0 25px #6a0dad;
   transform: translateY(-3px) scale(1.02);
 }
+/* Produits - grille moderne */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* image bien cadrée */
+  border-radius: 10px;
+}
+
