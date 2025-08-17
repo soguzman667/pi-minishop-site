@@ -111,3 +111,13 @@ function updateCart() {
 checkoutBtn.addEventListener("click", () => {
   window.location.href = "checkout.html"; // redirection vers la page checkout
 });
+addToCartButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const product = {
+      name: button.parentElement.querySelector("h3").innerText,
+      price: parseInt(button.parentElement.querySelector("p").innerText.replace("Prix : ", "").replace(" Pi",""))
+    };
+    cart.push(product);
+    updateCart(); // Met à jour compteur + sessionStorage
+  });
+});
