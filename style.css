@@ -127,3 +127,9 @@ footer {
   color: white;
   margin-top: 20px;
 }
+/* Logo Pi */
+.pi-logo {
+  color: #ffcc00; /* Doré comme Pi Network */
+  margin-right: 8px;
+  font-size: 1.3em;
+}
