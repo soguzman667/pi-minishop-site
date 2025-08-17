@@ -85,7 +85,20 @@ checkoutBtn.addEventListener("click", () => {
 });
 function updateCart() {
   cartCountElement.textContent = cart.length;
-  
+
+  function updateCart() {
+  cartCountElement.textContent = cart.length;
+
+  // Sauvegarder le panier dans sessionStorage
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+
+  // Animation bounce
+  cartCountElement.classList.add("bounce");
+  setTimeout(() => {
+    cartCountElement.classList.remove("bounce");
+  }, 500);
+}
+
   // Ajouter la classe bounce pour l'animation
   cartCountElement.classList.add("bounce");
 
@@ -94,3 +107,7 @@ function updateCart() {
     cartCountElement.classList.remove("bounce");
   }, 500);
 }
+
+checkoutBtn.addEventListener("click", () => {
+  window.location.href = "checkout.html"; // redirection vers la page checkout
+});
