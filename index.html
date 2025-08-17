@@ -9,59 +9,48 @@
 <body>
     <header>
         <h1>Bienvenue sur MiniShop Pi</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul class="menu">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#products">Produits</a></li>
-            <li><a href="#download">Télécharger</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <section id="accueil">
+        <h2>Notre Mini Shop</h2>
+        <p>Découvrez nos produits disponibles dès maintenant !</p>
+    </section>
 
-    <main>
-        <!-- Section Produits -->
-        <section id="products">
-            <h2>Nos produits</h2>
-            <div class="product-list">
-                <div class="product">
-                    <h3>Produit 1</h3>
-                    <p>Description du produit 1</p>
-                    <button>Acheter</button>
-                </div>
-                <div class="product">
-                    <h3>Produit 2</h3>
-                    <p>Description du produit 2</p>
-                    <button>Acheter</button>
-                </div>
+    <section id="produits">
+        <h2>Produits</h2>
+        <div class="produit-list">
+            <div class="produit">
+                <img src="https://via.placeholder.com/150" alt="Produit 1">
+                <h3>Produit 1</h3>
+                <p>Description courte du produit 1.</p>
+                <button onclick="ajouterPanier('Produit 1')">Ajouter au panier</button>
             </div>
-        </section>
+            <div class="produit">
+                <img src="https://via.placeholder.com/150" alt="Produit 2">
+                <h3>Produit 2</h3>
+                <p>Description courte du produit 2.</p>
+                <button onclick="ajouterPanier('Produit 2')">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
 
-        <!-- Section Télécharger le pack -->
-        <section id="download">
-            <h2>Télécharger le pack</h2>
-            <a href="pack.zip" download>
-                <button>Télécharger le pack</button>
-            </a>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact">
-            <h2>Contactez-nous</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Votre nom" required>
-                <input type="email" placeholder="Votre email" required>
-                <textarea placeholder="Votre message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-    </main>
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>Email : contact@minishoppi.com</p>
+    </section>
 
     <footer>
-        <p>© 2025 MiniShop Pi. Tous droits réservés.</p>
+        <p>&copy; 2025 MiniShop Pi. Tous droits réservés.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
