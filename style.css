@@ -242,3 +242,67 @@ footer {
   box-shadow: 0 0 15px #a450f0, 0 0 25px #6a0dad; /* effet lumineux violet */
   transform: translateY(-3px) scale(1.05); /* léger soulèvement et zoom */
 }
+/* Page Checkout */
+.checkout {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.checkout h1 {
+  text-align: center;
+  color: #6a0dad;
+  margin-bottom: 30px;
+}
+
+.checkout form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.checkout form input,
+.checkout form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.checkout form textarea {
+  resize: none;
+  height: 100px;
+}
+
+.checkout form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: #6a0dad;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout form button:hover {
+  background: #520a87;
+  box-shadow: 0 0 15px #a450f0, 0 0 25px #6a0dad;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .checkout {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+}
