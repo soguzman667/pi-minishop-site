@@ -397,4 +397,15 @@ footer {
   object-fit: cover; /* image bien cadrée */
   border-radius: 10px;
 }
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
 
+.product-card img {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05); /* zoom léger sur l'image */
+}
