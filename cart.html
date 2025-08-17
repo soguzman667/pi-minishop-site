@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiniShop Pi — Panier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="cart">
+  <header class="site-header">
+    <a class="brand" href="index.html">🛍️ MiniShop Pi</a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="cart.html" class="cart-link active">Panier <span id="cart-count" class="badge">0</span></a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Votre panier</h1>
+    <div id="cart-empty" class="card" style="display:none">
+      <p>Votre panier est vide pour le moment.</p>
+      <a class="btn" href="index.html">🛒 Voir les produits</a>
+    </div>
+
+    <div id="cart-content" style="display:none">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Qté</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="cart-rows"></tbody>
+      </table>
+
+      <div class="cart-summary">
+        <div class="line"><span>Sous‑total</span><strong id="subtotal">—</strong></div>
+        <div class="muted">Livraison calculée au checkout.</div>
+        <div class="actions">
+          <a class="btn btn-light" href="index.html">⬅️ Continuer mes achats</a>
+          <a class="btn" href="checkout.html">Aller au paiement ➜</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> MiniShop Pi</small>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
