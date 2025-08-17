@@ -306,3 +306,24 @@ footer {
     padding: 20px;
   }
 }
+/* Page À propos */
+.about {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.about h1 {
+  text-align: center;
+  color: #6a0dad;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
