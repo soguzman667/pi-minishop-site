@@ -47,3 +47,51 @@
   <script src="checkout.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniShop Pi - Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">π MiniShop Pi</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#produits">Produits</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="checkout">
+    <h1>Checkout</h1>
+    <div id="checkout-items"></div>
+    <p id="checkout-total"><strong>Total : 0 Pi</strong></p>
+
+    <h2>Informations pour la commande</h2>
+    <form id="checkout-form">
+      <label>Nom complet</label>
+      <input type="text" name="name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Adresse</label>
+      <textarea name="address" required></textarea>
+
+      <button type="submit">Valider la commande</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 MiniShop Pi. Tous droits réservés.</p>
+  </footer>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
