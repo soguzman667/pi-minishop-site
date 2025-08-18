@@ -67,3 +67,38 @@ checkoutForm.addEventListener("submit", (e) => {
   sessionStorage.removeItem("cart"); // vider le panier
   window.location.href = "index.html";
 });
+function animateTotal(finalTotal) {
+  let current = 0;
+  const duration = 500; // durée en ms
+  const stepTime = 20;
+  const increment = finalTotal / (duration / stepTime);
+
+  const interval = setInterval(() => {
+    current += increment;
+    if(current >= finalTotal){
+      current = finalTotal;
+      clearInterval(interval);
+    }
+    checkoutTotal.innerHTML = `<strong>Total : ${Math.round(current)} Pi</strong>`;
+  }, stepTime);
+}
+
+function displayCheckout() {
+  checkoutItems.innerHTML = "";
+  if(cart.length === 0){
+    checkoutItems.innerHTML = "<p>Votre panier est vide</p>";
+    checkoutTotal.innerHTML = "<strong>Total : 0 Pi</strong>";
+    return;
+  }
+
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price;
+    const div = document.createElement("div");
+    div.classList.add("checkout-item");
+    div.innerText = `${item.name} - ${item.price} Pi`;
+    checkoutItems.appendChild(div);
+  });
+
+  animateTotal(total);
+}
