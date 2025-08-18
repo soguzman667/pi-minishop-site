@@ -116,3 +116,44 @@ cart.forEach(item => {
   `;
   checkoutItems.appendChild(div);
 });
+cart.forEach((item, index) => {
+  total += item.price * item.quantity;
+  const div = document.createElement("div");
+  div.classList.add("checkout-item");
+  div.innerHTML = `
+    <img src="${item.img}" alt="${item.name}" class="checkout-item-img">
+    <span>${item.name} - ${item.price} Pi x 
+      <input type="number" min="1" value="${item.quantity}" class="item-quantity" data-index="${index}">
+    </span>
+    <button class="remove-item" data-index="${index}">Supprimer</button>
+  `;
+  checkoutItems.appendChild(div);
+});
+
+// Événement pour supprimer produit
+const removeButtons = document.querySelectorAll(".remove-item");
+removeButtons.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    const idx = e.target.dataset.index;
+    if(confirm(`Voulez-vous vraiment supprimer "${cart[idx].name}" ?`)){
+      cart.splice(idx,1);
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+      displayCheckout();
+      updateCart(); // mettre à jour compteur
+    }
+  });
+});
+
+// Événement pour modifier la quantité
+const quantityInputs = document.querySelectorAll(".item-quantity");
+quantityInputs.forEach(input => {
+  input.addEventListener("change", (e) => {
+    const idx = e.target.dataset.index;
+    let val = parseInt(e.target.value);
+    if(val < 1) val = 1;
+    cart[idx].quantity = val;
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    displayCheckout();
+    updateCart();
+  });
+});
