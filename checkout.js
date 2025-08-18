@@ -102,3 +102,7 @@ function displayCheckout() {
 
   animateTotal(total);
 }
+checkoutTotal.classList.add("animated");
+setTimeout(() => {
+  checkoutTotal.classList.remove("animated");
+}, 600);
