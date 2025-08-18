@@ -121,3 +121,36 @@ addToCartButtons.forEach((button) => {
     updateCart(); // Met à jour compteur + sessionStorage
   });
 });
+// Sélection des éléments
+const cartModal = document.getElementById("cart-modal");
+const cartItemsContainer = document.getElementById("cart-items");
+
+// Fonction pour afficher le panier
+function renderCart() {
+  cartItemsContainer.innerHTML = ""; // vider le contenu
+  if(cart.length === 0){
+    cartItemsContainer.innerHTML = "<p>Le panier est vide</p>";
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+      <span>${item.name} - ${item.price} Pi</span>
+      <button class="remove-item" data-index="${index}">Supprimer</button>
+    `;
+    cartItemsContainer.appendChild(div);
+  });
+
+  // Ajouter les événements pour supprimer
+  const removeButtons = document.querySelectorAll(".remove-item");
+  removeButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const idx = e.target.dataset.index;
+      cart.splice(idx,1);
+      updateCart();
+      renderCart();
+    });
+  });
+}
