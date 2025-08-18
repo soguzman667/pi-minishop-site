@@ -182,3 +182,4 @@ function displayOrderSummary(){
 
   summaryTotal.innerHTML = `<strong>Total : ${total} Pi</strong>`;
 }
+displayOrderSummary();
