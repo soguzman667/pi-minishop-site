@@ -154,3 +154,15 @@ function renderCart() {
     });
   });
 }
+// Ouvrir le modal au clic sur le compteur panier
+cartCountElement.addEventListener("click", () => {
+  cartModal.style.display = "block";
+  renderCart();
+});
+
+// Fermer le modal si clic en dehors
+window.addEventListener("click", (e) => {
+  if(e.target === cartModal){
+    cartModal.style.display = "none";
+  }
+});
