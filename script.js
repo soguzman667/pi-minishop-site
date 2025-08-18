@@ -93,18 +93,18 @@ function renderCart() {
 }
 
 function renderCart() {
-  cartItems.innerHTML = "";
-  let total = 0;
-  cart.forEach((item, index) => {
-    total += item.price;
-    const li = document.createElement("li");
-    li.innerHTML = `
-      ${item.name} - ${item.price} Pi
-      <button onclick="removeFromCart(${index})">Supprimer</button>
-    `;
-    cartItems.appendChild(li);
+  removeButtons.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    const idx = e.target.dataset.index;
+    const confirmDelete = confirm(`Voulez-vous vraiment supprimer "${cart[idx].name}" du panier ?`);
+    if(confirmDelete){
+      cart.splice(idx,1);
+      updateCart();
+      renderCart();
+    }
   });
-  cartTotal.textContent = total;
+});
+
 }
 
 // Retirer un produit
@@ -204,3 +204,4 @@ window.addEventListener("click", (e) => {
     cartModal.classList.remove("show");
   }
 });
+
