@@ -55,6 +55,44 @@ function updateCart() {
 
 // Afficher le contenu du panier
 function renderCart() {
+  cartItemsContainer.innerHTML = ""; // vider le contenu
+  if(cart.length === 0){
+    cartItemsContainer.innerHTML = "<p>Le panier est vide</p>";
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+      <span>${item.name} - ${item.price} Pi</span>
+      <button class="remove-item" data-index="${index}">Supprimer</button>
+    `;
+    cartItemsContainer.appendChild(div);
+  });
+
+  // Ajouter un div pour le total
+  const totalDiv = document.createElement("div");
+  totalDiv.classList.add("cart-total");
+  totalDiv.innerHTML = `<strong>Total : ${total} Pi</strong>`;
+  cartItemsContainer.appendChild(totalDiv);
+
+  // Ajouter les événements pour supprimer
+  const removeButtons = document.querySelectorAll(".remove-item");
+  removeButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const idx = e.target.dataset.index;
+      cart.splice(idx,1);
+      updateCart();
+      renderCart();
+    });
+  });
+}
+
+function renderCart() {
   cartItems.innerHTML = "";
   let total = 0;
   cart.forEach((item, index) => {
@@ -166,3 +204,4 @@ window.addEventListener("click", (e) => {
     cartModal.style.display = "none";
   }
 });
+
