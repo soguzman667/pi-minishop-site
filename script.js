@@ -222,3 +222,13 @@ if(confirm(`Voulez-vous vraiment supprimer "${cart[idx].name}" ?`)){
   updateCart(); // mettre à jour compteur
   showNotification(`"${cart[idx]?.name || 'Produit'}" supprimé !`);
 }
+input.addEventListener("change", (e) => {
+  const idx = e.target.dataset.index;
+  let val = parseInt(e.target.value);
+  if(val < 1) val = 1;
+  cart[idx].quantity = val;
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+  displayCheckout();
+  updateCart();
+  showNotification(`Quantité de "${cart[idx].name}" modifiée !`);
+});
