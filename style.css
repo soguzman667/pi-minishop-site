@@ -471,6 +471,28 @@ footer {
   width: 90%;
   z-index: 100;
 }
+.cart-modal {
+  display: none; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 90%;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-modal.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
 
 .cart-item {
   display: flex;
@@ -513,3 +535,4 @@ footer {
   box-shadow: 0 0 15px #a450f0, 0 0 25px #6a0dad;
   transform: translateY(-3px) scale(1.02);
 }
+
