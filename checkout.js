@@ -157,3 +157,28 @@ quantityInputs.forEach(input => {
     updateCart();
   });
 });
+const summaryItems = document.getElementById("summary-items");
+const summaryTotal = document.getElementById("summary-total");
+
+function displayOrderSummary(){
+  summaryItems.innerHTML = "";
+  if(cart.length === 0){
+    summaryItems.innerHTML = "<p>Votre panier est vide</p>";
+    summaryTotal.innerHTML = "<strong>Total : 0 Pi</strong>";
+    return;
+  }
+
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price * item.quantity;
+    const div = document.createElement("div");
+    div.classList.add("summary-item");
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <span>${item.name} x ${item.quantity} - ${item.price * item.quantity} Pi</span>
+    `;
+    summaryItems.appendChild(div);
+  });
+
+  summaryTotal.innerHTML = `<strong>Total : ${total} Pi</strong>`;
+}
