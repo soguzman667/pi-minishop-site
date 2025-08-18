@@ -570,3 +570,10 @@ footer {
   object-fit: cover;
   border-radius: 8px;
 }
+.item-quantity {
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+}
