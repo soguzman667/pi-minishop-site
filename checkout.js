@@ -106,3 +106,13 @@ checkoutTotal.classList.add("animated");
 setTimeout(() => {
   checkoutTotal.classList.remove("animated");
 }, 600);
+cart.forEach(item => {
+  total += item.price;
+  const div = document.createElement("div");
+  div.classList.add("checkout-item");
+  div.innerHTML = `
+    <img src="${item.img}" alt="${item.name}" class="checkout-item-img">
+    <span>${item.name} - ${item.price} Pi</span>
+  `;
+  checkoutItems.appendChild(div);
+});
