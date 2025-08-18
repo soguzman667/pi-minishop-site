@@ -32,3 +32,38 @@ checkoutForm.addEventListener("submit", (e) => {
   checkoutProducts.value = "";
   checkoutTotal.value = "0 Pi";
 });
+const checkoutItems = document.getElementById("checkout-items");
+const checkoutTotal = document.getElementById("checkout-total");
+const checkoutForm = document.getElementById("checkout-form");
+
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+function displayCheckout() {
+  checkoutItems.innerHTML = "";
+  if(cart.length === 0){
+    checkoutItems.innerHTML = "<p>Votre panier est vide</p>";
+    checkoutTotal.innerHTML = "<strong>Total : 0 Pi</strong>";
+    return;
+  }
+
+  let total = 0;
+  cart.forEach(item => {
+    total += item.price;
+    const div = document.createElement("div");
+    div.classList.add("checkout-item");
+    div.innerText = `${item.name} - ${item.price} Pi`;
+    checkoutItems.appendChild(div);
+  });
+
+  checkoutTotal.innerHTML = `<strong>Total : ${total} Pi</strong>`;
+}
+
+displayCheckout();
+
+// Formulaire : affichage confirmation
+checkoutForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Merci pour votre commande ! Vous recevrez un email de confirmation.");
+  sessionStorage.removeItem("cart"); // vider le panier
+  window.location.href = "index.html";
+});
