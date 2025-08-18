@@ -542,3 +542,16 @@ footer {
   padding: 5px 0;
   border-bottom: 1px solid #ddd;
 }
+#checkout-total {
+  font-size: 1.5em;
+  color: #6a0dad;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#checkout-total.animated {
+  transform: scale(1.1);
+  color: #a450f0;
+}
