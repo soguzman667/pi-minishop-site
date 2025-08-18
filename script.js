@@ -215,3 +215,10 @@ const product = {
   img: productCard.querySelector("img").src,
   quantity: 1
 };
+if(confirm(`Voulez-vous vraiment supprimer "${cart[idx].name}" ?`)){
+  cart.splice(idx,1);
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+  displayCheckout();
+  updateCart(); // mettre à jour compteur
+  showNotification(`"${cart[idx]?.name || 'Produit'}" supprimé !`);
+}
