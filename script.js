@@ -204,4 +204,8 @@ window.addEventListener("click", (e) => {
     cartModal.classList.remove("show");
   }
 });
-
+const product = {
+  name: productCard.querySelector("h3").innerText,
+  price: parseInt(productCard.querySelector("p").innerText.replace("Prix : ", "").replace(" Pi","")),
+  img: productCard.querySelector("img").src  // ajouter l'URL de l'image
+};
